@@ -5,10 +5,48 @@
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js'></script>
     <link rel="stylesheet" type="text/css" href="churn_vis.css">
+    <style>
+      .styled-table {
+          border-collapse: collapse;
+          margin: 10px 20px;
+          font-size: 1em;
+          font-family: sans-serif;
+          min-width: 400px;
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+          border-left: 2px solid #009879;
+          border-right: 2px solid #009879;
+      }
+      .styled-table thead tr {
+          background-color: #009879;
+          color: #ffffff;
+          text-align: left;
+      }
+      .styled-table th,
+      .styled-table td {
+          padding: 5px 5px;
+          border-left: 2px solid #009879;
+          border-bottom: 1px solid black;
+      }
+      .styled-table tbody tr {
+          border-bottom: 1px solid #dddddd;
+      }
+
+      .styled-table tbody tr:nth-of-type(even) {
+          background-color: #f3f3f3;
+      }
+
+      .styled-table tbody tr:last-of-type {
+          border-bottom: 2px solid #009879;
+      }
+      .styled-table tbody tr.active-row {
+          font-weight: bold;
+          color: #009879;
+      }
+    </style>
 </head>
 
 <body>
-    <h1>Refractor</h1>
+    <img src="telco_churn.bmp" style="padding:10px 0px 0px 10px">
     <div id="loader" style="clear: both;">
         Loading Sample Data...
         <br>
@@ -51,7 +89,7 @@
 
                 var body = d3.select("body");
 
-                var table = body.append("table");
+                var table = body.append("table").attr("class", "styled-table");
 
                 var thead = table.append("thead");
                 var tbody = table.append("tbody");

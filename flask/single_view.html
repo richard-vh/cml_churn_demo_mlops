@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <h1>Single Prediction View</h1>
+    <img src="telco_churn.bmp" style="padding:10px 0px 0px 10px">
     <div style='clear:both;' class="churn_div">
         <div style='float:left;padding-left:20px'>Churn Probability</div>
         <div id='pred_value'></div>
@@ -136,7 +136,7 @@
                     if (i === 0) {
                         return "width:100px"
                     } else if (i === 1) {
-                        return "width:100px;border: 1px solid #fff; background:#eee;";
+                        return "width:100px;border: 1px solid #ccc; background:#eee;";
                     } else if (i === 2) {
                       if (f.explanation !== undefined) {
                         return "width:30px;background:" + prob_color(f.explanation) + ";";
@@ -146,7 +146,7 @@
                       
                     } else {
                         if (!isNaN(parseInt(f.key))) {
-                            return "cursor: pointer; border: 1px solid #ccc; background:#ddd;"
+                            return "cursor: pointer; border: 1px solid #ccc; background:#ddd; border-radius: 5px;box-shadow: 0 0 5px rgba(0, 0, 0, 0.15)"
                         }
                     }
 

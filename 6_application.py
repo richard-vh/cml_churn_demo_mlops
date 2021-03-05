@@ -168,7 +168,7 @@ def send_file(path):
 
 @flask_app.route('/sample_table')
 def sample_table():
-    sample_ids = random.sample(range(1, len(em.data)), 10)
+    sample_ids = random.sample(range(1, len(em.data)), 20)
     sample_table = []
     for ids in sample_ids:
         sample_table.append(explainid(str(ids)))
